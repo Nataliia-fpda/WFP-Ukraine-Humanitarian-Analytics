@@ -1,0 +1,127 @@
+﻿Category;Strategic_Outcome;Modality;Gender;Age;Units;Year;Budget Attribute;Value
+CBT;Strategic Outcome 01;Cash;null;null;USD;2025;Planned;206591010
+CBT;Strategic Outcome 01;Cash;null;null;USD;2025;Actual;103567097
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2025;Planned;70904460
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2025;Actual;0
+CBT;Strategic Outcome 02;Cash;null;null;USD;2025;Planned;17082000
+CBT;Strategic Outcome 02;Cash;null;null;USD;2025;Actual;4292229
+CBT;Strategic Outcome 03;Cash;null;null;USD;2025;Planned;170346000
+CBT;Strategic Outcome 03;Cash;null;null;USD;2025;Actual;48887114
+CBT;Strategic Outcome 01;Cash;null;null;USD;2023;Planned;347580000
+CBT;Strategic Outcome 01;Cash;null;null;USD;2023;Actual;175575035
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2023;Planned;78310409
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2023;Actual;6948311
+CBT;Strategic Outcome 01;Commodity Voucher;null;null;USD;2023;Planned;29088000
+CBT;Strategic Outcome 01;Commodity Voucher;null;null;USD;2023;Actual;0
+CBT;Strategic Outcome 02;Cash;null;null;USD;2023;Planned;158459011
+CBT;Strategic Outcome 02;Cash;null;null;USD;2023;Actual;23783039
+CBT;Strategic Outcome 01;Cash;null;null;USD;2022;Planned;959475465
+CBT;Strategic Outcome 01;Cash;null;null;USD;2022;Actual;375643136
+CBT;Strategic Outcome 01;Commodity Voucher;null;null;USD;2022;Planned;4410000
+CBT;Strategic Outcome 01;Commodity Voucher;null;null;USD;2022;Actual;490585
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2022;Planned;90000000
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2022;Actual;4172683
+CBT;Strategic Outcome 01;Cash;null;null;USD;2024;Planned;122601000
+CBT;Strategic Outcome 01;Cash;null;null;USD;2024;Actual;87872958
+CBT;Strategic Outcome 01;Commodity Voucher;null;null;USD;2024;Planned;72000
+CBT;Strategic Outcome 01;Commodity Voucher;null;null;USD;2024;Actual;0
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2024;Planned;21182150
+CBT;Strategic Outcome 01;Value Voucher;null;null;USD;2024;Actual;0
+CBT;Strategic Outcome 02;Cash;null;null;USD;2024;Planned;189511189
+CBT;Strategic Outcome 02;Cash;null;null;USD;2024;Actual;81754488
+Beneficiaries;null;null;Male;0-23 months;Persons;2025;Planned;4515
+Beneficiaries;null;null;Male;0-23 months;Persons;2025;Actual;6362
+Beneficiaries;null;null;Female;0-23 months;Persons;2025;Planned;3806
+Beneficiaries;null;null;Female;0-23 months;Persons;2025;Actual;6102
+Beneficiaries;null;null;Male;24-59 months;Persons;2025;Planned;4873
+Beneficiaries;null;null;Male;24-59 months;Persons;2025;Actual;5996
+Beneficiaries;null;null;Female;24-59 months;Persons;2025;Planned;4655
+Beneficiaries;null;null;Female;24-59 months;Persons;2025;Actual;5532
+Beneficiaries;null;null;Male;5-11 years;Persons;2025;Planned;123864
+Beneficiaries;null;null;Male;5-11 years;Persons;2025;Actual;207197
+Beneficiaries;null;null;Female;5-11 years;Persons;2025;Planned;115880
+Beneficiaries;null;null;Female;5-11 years;Persons;2025;Actual;196742
+Beneficiaries;null;null;Male;12-17 years;Persons;2025;Planned;27110
+Beneficiaries;null;null;Male;12-17 years;Persons;2025;Actual;26007
+Beneficiaries;null;null;Female;12-17 years;Persons;2025;Planned;24252
+Beneficiaries;null;null;Female;12-17 years;Persons;2025;Actual;24068
+Beneficiaries;null;null;Male;18-59 years;Persons;2025;Planned;267794
+Beneficiaries;null;null;Male;18-59 years;Persons;2025;Actual;264433
+Beneficiaries;null;null;Female;18-59 years;Persons;2025;Planned;418208
+Beneficiaries;null;null;Female;18-59 years;Persons;2025;Actual;409680
+Beneficiaries;null;null;Male;60+ years;Persons;2025;Planned;258478
+Beneficiaries;null;null;Male;60+ years;Persons;2025;Actual;311726
+Beneficiaries;null;null;Female;60+ years;Persons;2025;Planned;461565
+Beneficiaries;null;null;Female;60+ years;Persons;2025;Actual;553617
+Beneficiaries;null;null;Male;0-23 months;Persons;2024;Planned;23979
+Beneficiaries;null;null;Male;0-23 months;Persons;2024;Actual;8032
+Beneficiaries;null;null;Female;0-23 months;Persons;2024;Planned;22560
+Beneficiaries;null;null;Female;0-23 months;Persons;2024;Actual;7923
+Beneficiaries;null;null;Male;24-59 months;Persons;2024;Planned;43686
+Beneficiaries;null;null;Male;24-59 months;Persons;2024;Actual;13553
+Beneficiaries;null;null;Female;24-59 months;Persons;2024;Planned;40870
+Beneficiaries;null;null;Female;24-59 months;Persons;2024;Actual;14101
+Beneficiaries;null;null;Male;5-11 years;Persons;2024;Planned;232532
+Beneficiaries;null;null;Male;5-11 years;Persons;2024;Actual;125135
+Beneficiaries;null;null;Female;5-11 years;Persons;2024;Planned;218781
+Beneficiaries;null;null;Female;5-11 years;Persons;2024;Actual;120866
+Beneficiaries;null;null;Male;12-17 years;Persons;2024;Planned;100926
+Beneficiaries;null;null;Male;12-17 years;Persons;2024;Actual;77904
+Beneficiaries;null;null;Female;12-17 years;Persons;2024;Planned;95504
+Beneficiaries;null;null;Female;12-17 years;Persons;2024;Actual;103654
+Beneficiaries;null;null;Male;18-59 years;Persons;2024;Planned;47607
+Beneficiaries;null;null;Male;18-59 years;Persons;2024;Actual;426053
+Beneficiaries;null;null;Female;18-59 years;Persons;2024;Planned;944841
+Beneficiaries;null;null;Female;18-59 years;Persons;2024;Actual;616271
+Beneficiaries;null;null;Male;60+ years;Persons;2024;Planned;283737
+Beneficiaries;null;null;Male;60+ years;Persons;2024;Actual;516107
+Beneficiaries;null;null;Female;60+ years;Persons;2024;Planned;503477
+Beneficiaries;null;null;Female;60+ years;Persons;2024;Actual;820835
+Beneficiaries;null;null;Male;0-23 months;Persons;2023;Planned;76759
+Beneficiaries;null;null;Male;0-23 months;Persons;2023;Actual;20307
+Beneficiaries;null;null;Female;0-23 months;Persons;2023;Planned;71491
+Beneficiaries;null;null;Female;0-23 months;Persons;2023;Actual;21958
+Beneficiaries;null;null;Male;24-59 months;Persons;2023;Planned;64114
+Beneficiaries;null;null;Male;24-59 months;Persons;2023;Actual;48281
+Beneficiaries;null;null;Female;24-59 months;Persons;2023;Planned;59978
+Beneficiaries;null;null;Female;24-59 months;Persons;2023;Actual;49245
+Beneficiaries;null;null;Male;5-11 years;Persons;2023;Planned;292922
+Beneficiaries;null;null;Male;5-11 years;Persons;2023;Actual;87031
+Beneficiaries;null;null;Female;5-11 years;Persons;2023;Planned;275563
+Beneficiaries;null;null;Female;5-11 years;Persons;2023;Actual;86267
+Beneficiaries;null;null;Male;12-17 years;Persons;2023;Planned;147877
+Beneficiaries;null;null;Male;12-17 years;Persons;2023;Actual;88364
+Beneficiaries;null;null;Female;12-17 years;Persons;2023;Planned;139948
+Beneficiaries;null;null;Female;12-17 years;Persons;2023;Actual;98384
+Beneficiaries;null;null;Male;18-59 years;Persons;2023;Planned;66528
+Beneficiaries;null;null;Male;18-59 years;Persons;2023;Actual;827157
+Beneficiaries;null;null;Female;18-59 years;Persons;2023;Planned;1380866
+Beneficiaries;null;null;Female;18-59 years;Persons;2023;Actual;1371069
+Beneficiaries;null;null;Male;60+ years;Persons;2023;Planned;415019
+Beneficiaries;null;null;Male;60+ years;Persons;2023;Actual;679586
+Beneficiaries;null;null;Female;60+ years;Persons;2023;Planned;735935
+Beneficiaries;null;null;Female;60+ years;Persons;2023;Actual;1103046
+Beneficiaries;null;null;Male;0-23 months;Persons;2022;Planned;153670
+Beneficiaries;null;null;Male;0-23 months;Persons;2022;Actual;142518
+Beneficiaries;null;null;Female;0-23 months;Persons;2022;Planned;141951
+Beneficiaries;null;null;Female;0-23 months;Persons;2022;Actual;141144
+Beneficiaries;null;null;Male;24-59 months;Persons;2022;Planned;68683
+Beneficiaries;null;null;Male;24-59 months;Persons;2022;Actual;233015
+Beneficiaries;null;null;Female;24-59 months;Persons;2022;Planned;64286
+Beneficiaries;null;null;Female;24-59 months;Persons;2022;Actual;218572
+Beneficiaries;null;null;Male;5-11 years;Persons;2022;Planned;195138
+Beneficiaries;null;null;Male;5-11 years;Persons;2022;Actual;304088
+Beneficiaries;null;null;Female;5-11 years;Persons;2022;Planned;195611
+Beneficiaries;null;null;Female;5-11 years;Persons;2022;Actual;318468
+Beneficiaries;null;null;Male;12-17 years;Persons;2022;Planned;156149
+Beneficiaries;null;null;Male;12-17 years;Persons;2022;Actual;327735
+Beneficiaries;null;null;Female;12-17 years;Persons;2022;Planned;200117
+Beneficiaries;null;null;Female;12-17 years;Persons;2022;Actual;317717
+Beneficiaries;null;null;Male;18-59 years;Persons;2022;Planned;890205
+Beneficiaries;null;null;Male;18-59 years;Persons;2022;Actual;1910142
+Beneficiaries;null;null;Female;18-59 years;Persons;2022;Planned;1452576
+Beneficiaries;null;null;Female;18-59 years;Persons;2022;Actual;3427196
+Beneficiaries;null;null;Male;60+ years;Persons;2022;Planned;429660
+Beneficiaries;null;null;Male;60+ years;Persons;2022;Actual;1078756
+Beneficiaries;null;null;Female;60+ years;Persons;2022;Planned;756954
+Beneficiaries;null;null;Female;60+ years;Persons;2022;Actual;1966229
