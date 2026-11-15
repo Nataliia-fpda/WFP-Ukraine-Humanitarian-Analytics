@@ -1,7 +1,12 @@
 # WFP-Ukraine-Humanitarian-Analytics
 Power BI dashboard analyzing World Food Programme humanitarian assistance in Ukraine, focusing on the number of beneficiaries assisted and cash based transfers provided during 2022–2025.
 
+## Dashboard Preview:
+
+01.Overview_2022-2025.png 
+
 ## Data
+
 - Source: https://www.wfp.org/publications/annual-country-reports-ukraine (accessed Nov 2026)
 - Data extracted from .pdf Summary Tables Annexes, cleaned and transformed in Power Query
    
