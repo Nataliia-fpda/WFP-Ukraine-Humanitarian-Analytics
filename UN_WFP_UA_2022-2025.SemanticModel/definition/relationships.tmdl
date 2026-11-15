@@ -1,0 +1,8 @@
+relationship 87bda865-2d74-fb40-5ce5-3df97426d6e4
+	fromColumn: 2022-2025.Age
+	toColumn: DimAge.Age
+
+relationship 20438cbf-5a27-261d-f610-3cc8d56389be
+	fromColumn: 2022-2025.Year
+	toColumn: DimYear.Year
+

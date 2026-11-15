@@ -1,0 +1,155 @@
+table 2022-2025
+	lineageTag: e9f36f32-2470-433b-bd99-00d3c7680462
+
+	measure 'Number of Beneficiaries' = CALCULATE(SUM('2022-2025'[Value]),'2022-2025'[Units]="Persons")
+		formatString: #,0
+		lineageTag: cd33cfbe-b055-4d41-b5ac-29429e002155
+
+	measure 'Cash Based Transfers' = CALCULATE(SUM('2022-2025'[Value]),'2022-2025'[Units]="USD")
+		formatString: #,0
+		lineageTag: 9f5e1469-8309-4b74-9ad9-bccc8060e748
+
+	measure Plan = CALCULATE(SUM('2022-2025'[Value]),'2022-2025'[Budget Attribute]="Planned")
+		formatString: #,0
+		lineageTag: 7b1d0308-6343-40f5-bb27-45640f7a4b2a
+
+	measure Actual = CALCULATE(SUM('2022-2025'[Value]),'2022-2025'[Budget Attribute]="Actual")
+		formatString: #,0
+		lineageTag: 4825735a-0439-4128-b96d-0def7e31d96c
+
+	measure 'Deviation_Benef.' = CALCULATE([Actual] - [Plan],'2022-2025'[Units]="Persons")
+		formatString: #,0
+		isHidden
+		lineageTag: f3a9bf13-91eb-4b6b-9455-2b1054077bfa
+
+		changedProperty = IsHidden
+
+	measure 'Plan Execution Benefeciaries %' = CALCULATE(DIVIDE([Actual], [Plan], 0),'2022-2025'[Units]="Persons")
+		formatString: 0%;-0%;0%
+		lineageTag: b984379e-19be-42e4-8322-8dadff618a48
+
+	measure Deviation_Cash = CALCULATE([Actual] - [Plan],'2022-2025'[Units]="USD")
+		formatString: #,0
+		lineageTag: 8d8941b6-9417-443c-8a5f-d56fe4ff58a7
+
+	measure 'Plan Execution Cash %' = CALCULATE(DIVIDE([Actual], [Plan], 0),'2022-2025'[Units]="USD")
+		formatString: 0%;-0%;0%
+		lineageTag: 49859e0a-7a86-4ea9-b3a1-ad63409b510e
+
+	measure 'Deviation from Plan' = [Actual] - [Plan]
+		formatString: #,0
+		lineageTag: 0ecff423-115f-4bfc-9ba5-26c09c4486a2
+
+	measure 'Plan Execution, %' = DIVIDE([Actual], [Plan], 0)
+		formatString: 0%;-0%;0%
+		lineageTag: f9d055c6-d7af-4452-b533-eb6220cabba1
+
+	measure 'Actual Previous Year' =
+			
+			VAR CurrentYear = MAX(DimYear[Year])
+			RETURN
+			    CALCULATE([Actual],FILTER(ALL(DimYear[Year]),DimYear[Year] = CurrentYear - 1))
+		formatString: #,0
+		lineageTag: bb918d10-a58a-40c6-8b2c-ce1513c8ce1d
+
+	measure 'Actual YoY %' =
+			
+			DIVIDE([Actual] - [Actual Previous Year],[Actual Previous Year])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 363685e8-3156-41d7-8d22-64ad9c3a7d4c
+
+	column Category
+		dataType: string
+		lineageTag: bfbd972a-8eda-4156-9ad1-03d4a0bdf537
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modality
+		dataType: string
+		lineageTag: d9262a4d-ad96-40ce-a922-cb1550f10a84
+		summarizeBy: none
+		sourceColumn: Modality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: d33104e6-ab33-48f6-953f-ecad55e468e3
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Units
+		dataType: string
+		lineageTag: cceaf708-3740-4124-adf5-129d6861fa10
+		summarizeBy: none
+		sourceColumn: Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4b13167c-c530-46e6-ac3d-9a41953f8325
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Attribute'
+		dataType: string
+		lineageTag: 7d6ec3df-e28e-4b31-8777-77c8d0562c56
+		summarizeBy: none
+		sourceColumn: Budget Attribute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: int64
+		formatString: #,0
+		lineageTag: 897c6315-f97b-4779-8e21-7311c5763bc3
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Strategic_Outcome
+		dataType: string
+		lineageTag: 18ee273a-16e6-40b3-b20c-2b35486f496d
+		summarizeBy: none
+		sourceColumn: Strategic_Outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		isHidden
+		lineageTag: 49a6eca7-e9d7-4bd3-9509-823b0470e9cf
+		summarizeBy: none
+		sourceColumn: Age
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 2022-2025 = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({#"CBT_2022-2025", #"Gender_Age_2022-2025"}),
+				    #"Reordered Columns" = Table.ReorderColumns(Source,{"Category", "Strategic_Outcome", "Modality", "Gender", "Age", "Units", "Year", "Planned_Actual", "Value"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"Value", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Planned_Actual", "Budget Attribute"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

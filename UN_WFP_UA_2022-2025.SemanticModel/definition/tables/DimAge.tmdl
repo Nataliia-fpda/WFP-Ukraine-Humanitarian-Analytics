@@ -1,0 +1,41 @@
+table DimAge
+	lineageTag: 73cd2a79-82d9-4e77-985b-a337c7373ade
+
+	column Age
+		lineageTag: 5ed59155-a89d-4366-b607-189fb55d0e13
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Age]
+		sortByColumn: Age_Sort_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age_Sort_Order
+		isHidden
+		formatString: 0
+		lineageTag: c2cd9fb3-f89f-4b2f-b37c-5101447f6f62
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Age_Sort_Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimAge = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Age", STRING,
+				    "Age_Sort_Order", INTEGER,
+				    {
+				        {"0-23 months", 1},
+				        {"24-59 months", 2},
+				        {"5-11 years", 3},
+				        {"12-17 years", 4},
+				        {"18-59 years", 5},
+				        {"60+ years", 6}
+				    }
+				)
+
+	annotation PBI_Id = c513da320a4c4cde8f2318a385c8e85e
+

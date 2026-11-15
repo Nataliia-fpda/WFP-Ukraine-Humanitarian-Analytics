@@ -1,0 +1,29 @@
+table DimYear
+	lineageTag: ef6c8dba-c49c-45b9-b6d8-a59740ef478f
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: f194e21c-0ca9-4994-8a86-17f9f106b9cf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimYear = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Year", INTEGER,
+				    {
+				        {2022},
+				        {2023},
+				        {2024},
+				        {2025}
+				    }
+				)
+
+	annotation PBI_Id = 667d0e30a58b45c28de42fa61d77ddc6
+

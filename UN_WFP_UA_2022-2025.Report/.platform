@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "UN_WFP_UA_2022-2025"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "62423bb7-a91d-43ef-81d0-261b3be903c5"
+  }
+}

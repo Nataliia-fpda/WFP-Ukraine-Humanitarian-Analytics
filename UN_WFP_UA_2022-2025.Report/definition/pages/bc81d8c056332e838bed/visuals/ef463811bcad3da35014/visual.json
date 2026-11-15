@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ef463811bcad3da35014",
+  "position": {
+    "x": 0,
+    "y": 144,
+    "z": 9001,
+    "height": 64,
+    "width": 1280,
+    "tabOrder": 8001
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Summary: Beneficiaries and cash based transfers have decreased every year since the 2022 emergency peak, but the decline is slowing. Since 2023, actual beneficiaries have met or exceeded plan, while cash transfers have reached only about 34-51% of plan.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#0078ed"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

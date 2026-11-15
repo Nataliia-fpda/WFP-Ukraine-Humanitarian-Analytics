@@ -1,0 +1,424 @@
+expression Gender_Age_2024 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2024.pdf"), [Implementation="1.3"]),
+		    Table001 = Source{[Id="Table001"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table001, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Beneficiary Category", type text}, {"Gender", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",4),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Beneficiary Category"}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Filled Down",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type1", "Year", each 2024)
+		in
+		    #"Added Custom"
+	lineageTag: c3c09469-412d-4100-9674-5a3e18daa6de
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Residence_2024 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2024.pdf"), [Implementation="1.3"]),
+		    Table002 = Source{[Id="Table002"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(Table002,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Residence Status", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", type text}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}})
+		in
+		    #"Changed Type2"
+	lineageTag: 356f914d-ca59-4632-bcb2-e57e7da20a54
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Programme_Area_2024 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2024.pdf"), [Implementation="1.3"]),
+		    Table003 = Source{[Id="Table003"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table003, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Programme Area", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}})
+		in
+		    #"Changed Type1"
+	lineageTag: fe70a69e-5f6d-4cd4-804c-87d8332bf8dc
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Access_to_Food_2024 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2024.pdf"), [Implementation="1.3"]),
+		    Table004 = Source{[Id="Table004"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table004, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Commodities", type text}, {"Planned Distribution (mt)", type number}, {"Actual Distribution (mt)", type number}, {"% Actual vs. Planned", type text}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",2)
+		in
+		    #"Removed Top Rows"
+	lineageTag: 393d6013-54f4-4448-a2a2-56741c33271a
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Gender_Age_2025 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA03_summary_tables_annex_2025.pdf"), [Implementation="1.3"]),
+		    Table001 = Source{[Id="Table001"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table001, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Beneficiary Category", type text}, {"Gender", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",4),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Beneficiary Category"}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Filled Down",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type1", "Year", each 2025),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom",{{"Year", Int64.Type}})
+		in
+		    #"Changed Type2"
+	lineageTag: ed63a384-8334-4fca-84d7-674f57bc7564
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Residence_2025 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA03_summary_tables_annex_2025.pdf"), [Implementation="1.3"]),
+		    Table002 = Source{[Id="Table002"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(Table002,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Residence Status", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", type text}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}})
+		in
+		    #"Changed Type2"
+	lineageTag: daf7d3a0-c559-448d-8f0d-39e6002e6c6a
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Programme_Area_2025 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA03_summary_tables_annex_2025.pdf"), [Implementation="1.3"]),
+		    Table003 = Source{[Id="Table003"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table003, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Programme Area", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}})
+		in
+		    #"Changed Type1"
+	lineageTag: 3f84f7b2-56b9-42a0-8d15-4da1ce927537
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Access_to_Food_2025 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA03_summary_tables_annex_2025.pdf"), [Implementation="1.3"]),
+		    Table004 = Source{[Id="Table004"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table004, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Commodities", type text}, {"Planned Distribution (mt)", type number}, {"Actual Distribution (mt)", type number}, {"% Actual vs. Planned", type text}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",2),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Top Rows",{{"Planned Distribution (mt)", type number}, {"Actual Distribution (mt)", type number}})
+		in
+		    #"Changed Type1"
+	lineageTag: cd40ece7-fecb-4312-910e-c6edd118a99d
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Gender_Age_2023 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2023.pdf"), [Implementation="1.3"]),
+		    Table001 = Source{[Id="Table001"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table001, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Beneficiary Category", type text}, {"Gender", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",4),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Beneficiary Category"}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Filled Down",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type1", "Year", each 2023),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom",{{"Year", Int64.Type}})
+		in
+		    #"Changed Type2"
+	lineageTag: 62703e6c-5219-40b2-96cc-8ce792b0736e
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Residence_2023 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2023.pdf"), [Implementation="1.3"]),
+		    Table002 = Source{[Id="Table002"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(Table002,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: 0a9a2853-3dde-42d1-be3c-70a5861f84b6
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Programme_Area_2023 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2023.pdf"), [Implementation="1.3"]),
+		    Table003 = Source{[Id="Table003"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table003, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Programme Area", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: 839a9e6d-2707-4ce6-8c06-86e21c53201d
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Access_to_Food_2023 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2023.pdf"), [Implementation="1.3"]),
+		    Table004 = Source{[Id="Table004"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table004, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Commodities", type text}, {"Planned Distribution (mt)", type number}, {"Actual Distribution (mt)", type number}, {"% Actual vs. Planned", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: 43f072f4-b63b-4446-abd6-f34cc38de73f
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Gender_Age_2022 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA01_summary_tables_annex_2022.pdf"), [Implementation="1.3"]),
+		    Table001 = Source{[Id="Table001"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table001, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Beneficiary Category", type text}, {"Gender", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",4),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Beneficiary Category"}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Filled Down",",","",Replacer.ReplaceText,{"Planned", "Actual"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned", Int64.Type}, {"Actual", Int64.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type1", "Year", each 2022),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom",{{"Year", Int64.Type}})
+		in
+		    #"Changed Type2"
+	lineageTag: 92627e76-12c8-43b8-a898-0a6351916459
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression CBT_2022-2025 =
+		let
+		    Source = Table.Combine({CBT_2025, CBT_2023, CBT_2022, CBT_2024}),
+		    #"Renamed Columns" = Table.RenameColumns(Source,{{"Planned Distribution (CBT)", "Planned"}, {"Actual Distribution (CBT)", "Actual"}}),
+		    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Renamed Columns", {"Strategic_Outcome", "Modality", "Custom"}, "Attribute", "Value"),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "Planned_Actual"}}),
+		    #"Added Custom" = Table.AddColumn(#"Renamed Columns1", "Units", each "USD"),
+		    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Category", each "CBT"),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"Category", type text}}),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type",{"Category", "Strategic_Outcome", "Modality", "Custom", "Planned_Actual", "Value", "Units"}),
+		    #"Renamed Columns2" = Table.RenameColumns(#"Reordered Columns",{{"Custom", "Year"}}),
+		    #"Reordered Columns1" = Table.ReorderColumns(#"Renamed Columns2",{"Category", "Strategic_Outcome", "Modality", "Units", "Year", "Planned_Actual", "Value"})
+		in
+		    #"Reordered Columns1"
+	lineageTag: fc428ea1-16c0-498b-983f-7b8423dc6a85
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression CBT_2023 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2023.pdf"), [Implementation="1.3"]),
+		    Table005 = Source{[Id="Table005"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table005, [PromoteAllScalars=true]),
+		    #"Replaced Value" = Table.ReplaceValue(#"Promoted Headers",",","",Replacer.ReplaceText,{"Planned Distribution (CBT)", "Actual Distribution (CBT)"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned Distribution (CBT)", Currency.Type}, {"Actual Distribution (CBT)", Currency.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type", "Custom", each 2023),
+		    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"% Actual vs. Planned"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Custom", Int64.Type}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Custom.1", each if Text.Contains([Modality], "Strategic") then [Modality] else null),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Added Conditional Column",{"Custom.1", "Modality", "Planned Distribution (CBT)", "Actual Distribution (CBT)", "Custom"}),
+		    #"Removed Top Rows" = Table.Skip(#"Reordered Columns",1),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Custom.1"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Filled Down", each ([Modality] <> "Strategic Outcome 01" and [Modality] <> "Strategic Outcome 02")),
+		    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [#"Planned Distribution (CBT)"] <> null and [#"Planned Distribution (CBT)"] <> ""),
+		    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows1",{{"Custom.1", "Strategic_Outcome"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 1d2f0676-863d-42ea-88d3-5796f052bbeb
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression CBT_2022 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA01_summary_tables_annex_2022.pdf"), [Implementation="1.3"]),
+		    Table005 = Source{[Id="Table005"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table005, [PromoteAllScalars=true]),
+		    #"Replaced Value" = Table.ReplaceValue(#"Promoted Headers",",","",Replacer.ReplaceText,{"Planned Distribution (CBT)", "Actual Distribution (CBT)"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned Distribution (CBT)", Currency.Type}, {"Actual Distribution (CBT)", Currency.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type", "Custom", each 2022),
+		    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"% Actual vs. Planned"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Custom", Int64.Type}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Custom.1", each if Text.Contains([Modality], "Strategic") then [Modality] else null),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Added Conditional Column",{"Custom.1", "Modality", "Planned Distribution (CBT)", "Actual Distribution (CBT)", "Custom"}),
+		    #"Removed Top Rows" = Table.Skip(#"Reordered Columns",1),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Custom.1"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Filled Down", each ([Modality] <> "Strategic Outcome 01" and [Modality] <> "Strategic Outcome 02")),
+		    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [#"Planned Distribution (CBT)"] <> null and [#"Planned Distribution (CBT)"] <> ""),
+		    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows1",{{"Custom.1", "Strategic_Outcome"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: fe7b1f9d-c043-4d64-b239-0120c0faa608
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression CBT_2024 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA02_summary_tables_annex_2024.pdf"), [Implementation="1.3"]),
+		    Table005 = Source{[Id="Table005"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table005, [PromoteAllScalars=true]),
+		    #"Replaced Value" = Table.ReplaceValue(#"Promoted Headers",",","",Replacer.ReplaceText,{"Planned Distribution (CBT)", "Actual Distribution (CBT)"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned Distribution (CBT)", Currency.Type}, {"Actual Distribution (CBT)", Currency.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type", "Custom", each 2024),
+		    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"% Actual vs. Planned"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Custom", Int64.Type}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Custom.1", each if Text.Contains([Modality], "Strategic") then [Modality] else null),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Added Conditional Column",{"Custom.1", "Modality", "Planned Distribution (CBT)", "Actual Distribution (CBT)", "Custom"}),
+		    #"Removed Top Rows" = Table.Skip(#"Reordered Columns",1),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Custom.1"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Filled Down", each ([Modality] <> "Strategic Outcome 01" and [Modality] <> "Strategic Outcome 02")),
+		    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [#"Planned Distribution (CBT)"] <> null and [#"Planned Distribution (CBT)"] <> ""),
+		    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows1",{{"Custom.1", "Strategic_Outcome"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 40fa2bab-0b7c-43c6-975d-1afc1013d79b
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression CBT_2025 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA03_summary_tables_annex_2025.pdf"), [Implementation="1.3"]),
+		    Table005 = Source{[Id="Table005"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table005, [PromoteAllScalars=true]),
+		    #"Replaced Value" = Table.ReplaceValue(#"Promoted Headers",",","",Replacer.ReplaceText,{"Planned Distribution (CBT)", "Actual Distribution (CBT)"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"Planned Distribution (CBT)", Currency.Type}, {"Actual Distribution (CBT)", Currency.Type}}),
+		    #"Added Custom" = Table.AddColumn(#"Changed Type", "Custom", each 2025),
+		    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"% Actual vs. Planned"}),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Custom", Int64.Type}}),
+		    #"Added Conditional Column" = Table.AddColumn(#"Changed Type1", "Custom.1", each if Text.Contains([Modality], "Strategic") then [Modality] else null),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Added Conditional Column",{"Custom.1", "Modality", "Planned Distribution (CBT)", "Actual Distribution (CBT)", "Custom"}),
+		    #"Removed Top Rows" = Table.Skip(#"Reordered Columns",1),
+		    #"Filled Down" = Table.FillDown(#"Removed Top Rows",{"Custom.1"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Filled Down", each ([Modality] <> "Strategic Outcome 01" and [Modality] <> "Strategic Outcome 02")),
+		    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [#"Planned Distribution (CBT)"] <> null and [#"Planned Distribution (CBT)"] <> ""),
+		    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows1",{{"Custom.1", "Strategic_Outcome"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 16661390-6aa5-4b49-8db6-a3b2440c952f
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Residence_2022 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA01_summary_tables_annex_2022.pdf"), [Implementation="1.3"]),
+		    Table002 = Source{[Id="Table002"]}[Data],
+		    #"Changed Type" = Table.TransformColumnTypes(Table002,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: 65ec3ab4-f508-40df-a2b6-6a3fe6e5f7d1
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Programme_Area_2022 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA01_summary_tables_annex_2022.pdf"), [Implementation="1.3"]),
+		    Table003 = Source{[Id="Table003"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table003, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Programme Area", type text}, {"Planned", type text}, {"Actual", type text}, {"% Actual vs. Planned", Percentage.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: eb9fde41-4837-47be-ac51-f8eb862823f6
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Access_to_Food_2022 =
+		let
+		    Source = Pdf.Tables(File.Contents("C:\Users\Natal\OneDrive\Desktop\UN_WFP\UA01_summary_tables_annex_2022.pdf"), [Implementation="1.3"]),
+		    Table004 = Source{[Id="Table004"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Table004, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Commodities", type text}, {"Planned Distribution (mt)", type number}, {"Actual Distribution (mt)", type number}, {"% Actual vs. Planned", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: 891c58d9-9e17-41df-bc9a-16a4cfee349c
+	queryGroup: Raw_Data
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Gender_Age_2022-2025 =
+		let
+		    Source = Table.Combine({Gender_Age_2025, Gender_Age_2024, Gender_Age_2023, Gender_Age_2022}),
+		    #"Removed Columns" = Table.RemoveColumns(Source,{"% Actual vs. Planned"}),
+		    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Removed Columns", {"Beneficiary Category", "Gender", "Year"}, "Attribute", "Value"),
+		    #"Filtered Rows" = Table.SelectRows(#"Unpivoted Columns", each ([Gender] <> "total")),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Value", Int64.Type}, {"Year", Int64.Type}}),
+		    #"Capitalized Each Word" = Table.TransformColumns(#"Changed Type",{{"Gender", Text.Proper, type text}}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Capitalized Each Word",{{"Attribute", "Planned_Actual"}}),
+		    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Units", each "Persons"),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Units", type text}}),
+		    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Category", each "Beneficiaries"),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"Category", type text}}),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type2",{"Category", "Beneficiary Category", "Gender", "Year", "Planned_Actual", "Value", "Units"}),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Reordered Columns",{{"Beneficiary Category", "Group"}}),
+		    #"Reordered Columns1" = Table.ReorderColumns(#"Renamed Columns1",{"Category", "Group", "Gender", "Units", "Year", "Planned_Actual", "Value"}),
+		    #"Renamed Columns2" = Table.RenameColumns(#"Reordered Columns1",{{"Group", "Age"}}),
+		    #"Reordered Columns2" = Table.ReorderColumns(#"Renamed Columns2",{"Category", "Gender", "Age", "Units", "Year", "Planned_Actual", "Value"})
+		in
+		    #"Reordered Columns2"
+	lineageTag: ea31e61b-7ccd-46d2-8b7e-6668068695bb
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
