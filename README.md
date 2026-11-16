@@ -30,10 +30,10 @@ Power BI dashboard analyzing World Food Programme humanitarian assistance in Ukr
 
  ## Tools & Technologies:
 
-    Microsoft Power BI
-    DAX (Data Analysis Expressions)
-    Power Query
-    Data Visualization
+- Microsoft Power BI
+- DAX (Data Analysis Expressions)
+- Power Query
+- Data Visualization
 
   ## How to open
   Download the repo and open 'UN_WFP_UA_2022-2025.pbip' in Power BI Desktop.
